@@ -3,6 +3,8 @@ kind: Job
 metadata:
   name: helloworld 
 spec:
+  parallelism: 3
+  completions: 3
   template:
     metadata:
       name: helloworld-pod
@@ -12,4 +14,4 @@ spec:
         image: joyrahman/helloworld_kubernetes:v1
         command: ["python"]
         args: ["/var/app/helloworld.py", "204800","5000"]
-      restartPolicy: Never
+      restartPolicy: OnFailure
