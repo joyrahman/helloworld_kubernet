@@ -1,15 +1,15 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: dcopy
+  name: helloworld 
 spec:
   template:
     metadata:
-      name: command-demo-pod
+      name: helloworld-pod
     spec:
       containers:
-      - name: command-demo-container
-        image: joyrahman/dcopy:v3
+      - name: helloworld-container
+        image: joyrahman/helloworld_kubernetes:v1
         command: ["python"]
-        args: ["/var/app/dcopy.py", "204800","5000"]
+        args: ["/var/app/helloworld.py", "204800","5000"]
       restartPolicy: Never
